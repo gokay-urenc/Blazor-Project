@@ -1,0 +1,24 @@
+﻿@page "/login"
+@using BlazorUI.Services
+@using BlazorUI.Models
+@inject IAuthService AuthService
+
+<h3>Login</h3>
+<EditForm Model="@loginModel" OnValidSubmit="@HandleLogin">
+    <div class="form-group">
+        <InputText PlaceHolder="E-mail" Class="form-control" @bind-Value="@loginModel.Email" />
+    </div>
+    <div class="form-group">
+        <InputText PlaceHolder="Password" type="password" Class="form-control" @bind-Value="@loginModel.Password" />
+    </div>
+    <button class="btn btn-primary" type="submit">Login</button>
+</EditForm>
+
+@code {
+    LoginModel loginModel = new LoginModel();
+
+    private async Task HandleLogin()
+    {
+        await AuthService.Login(loginModel);
+    }
+}

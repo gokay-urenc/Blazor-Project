@@ -1,0 +1,55 @@
+﻿@page "/productlist"
+@using BlazorUI.Models
+@using BlazorUI.Services
+@inject IProductService ProductService
+@inject NavigationManager NavigationManager
+
+@if (products == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table table-striped table-dark float-left text-center">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Units In Stock</th>
+                <th>Quantity Per Unit</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.UnitPrice</td>
+                    <td>@product.UnitsInStock</td>
+                    <td>@product.QuantityPerUnit</td>
+                    <th>
+                        <button class="button-update" @onclick="@(() => GoToDetail(product.ProductId))">Update</button>
+                        <button class="button-delete">Delete</button>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    ProductListViewModel[] products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await ProductService.GetProducts();
+    }
+
+    private void GoToDetail(int productId)
+    {
+        NavigationManager.NavigateTo("/productdetail/" + productId);
+    }
+}

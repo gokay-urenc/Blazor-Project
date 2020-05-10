@@ -1,0 +1,39 @@
+﻿@page "/categorydetail/{categoryid:int}"
+@using BlazorUI.Models
+@using BlazorUI.Services
+@inject IProductService ProductService
+@inject ICategoryService CategoryService
+@inject NavigationManager NavigationManager
+
+@if (category != null)
+{
+    <div class="col-md-4">
+        <h3 class="text-info mb-4">Category Detail for <strong>@category.CategoryName</strong></h3>
+        <EditForm Model="@category" OnValidSubmit="@HandleSave">
+            <DataAnnotationsValidator />
+            @*<ValidationSummary />*@
+            <div class="form-group">
+                <InputText PlaceHolder="Category Name" Class="form-control" Id="categoryName" @bind-Value="@category.CategoryName" />
+                <ValidationMessage For="@(() => category.CategoryName)" />
+            </div>
+            <button class="button-update" type="submit">Save</button>
+        </EditForm>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int CategoryId { get; set; }
+
+    CategoryViewModel category;
+
+    protected override async Task OnInitializedAsync()
+    {
+        category = await CategoryService.GetCategoryById(CategoryId);
+    }
+
+    private void HandleSave()
+    {
+        CategoryService.Save(category);
+    }
+}

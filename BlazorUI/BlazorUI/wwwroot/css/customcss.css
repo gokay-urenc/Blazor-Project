@@ -1,0 +1,85 @@
+﻿.button-update {
+    -moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3629e6), color-stop(1, #76bded));
+    background: -moz-linear-gradient(top, #3629e6 5%, #76bded 100%);
+    background: -webkit-linear-gradient(top, #3629e6 5%, #76bded 100%);
+    background: -o-linear-gradient(top, #3629e6 5%, #76bded 100%);
+    background: -ms-linear-gradient(top, #3629e6 5%, #76bded 100%);
+    background: linear-gradient(to bottom, #3629e6 5%, #76bded 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3629e6', endColorstr='#76bded',GradientType=0);
+    background-color: #3629e6;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #84bbf3;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528ecc;
+    width: 75px;
+}
+
+    .button-update:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #76bded), color-stop(1, #3629e6));
+        background: -moz-linear-gradient(top, #76bded 5%, #3629e6 100%);
+        background: -webkit-linear-gradient(top, #76bded 5%, #3629e6 100%);
+        background: -o-linear-gradient(top, #76bded 5%, #3629e6 100%);
+        background: -ms-linear-gradient(top, #76bded 5%, #3629e6 100%);
+        background: linear-gradient(to bottom, #76bded 5%, #3629e6 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#76bded', endColorstr='#3629e6',GradientType=0);
+        background-color: #76bded;
+    }
+
+    .button-update:active {
+        position: relative;
+        top: 1px;
+    }
+
+.button-delete {
+    -moz-box-shadow: inset 0px 1px 0px 0px #f29c93;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #f29c93;
+    box-shadow: inset 0px 1px 0px 0px #f29c93;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ed0e3b), color-stop(1, #9e3c0e));
+    background: -moz-linear-gradient(top, #ed0e3b 5%, #9e3c0e 100%);
+    background: -webkit-linear-gradient(top, #ed0e3b 5%, #9e3c0e 100%);
+    background: -o-linear-gradient(top, #ed0e3b 5%, #9e3c0e 100%);
+    background: -ms-linear-gradient(top, #ed0e3b 5%, #9e3c0e 100%);
+    background: linear-gradient(to bottom, #ed0e3b 5%, #9e3c0e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed0e3b', endColorstr='#9e3c0e',GradientType=0);
+    background-color: #ed0e3b;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #d83526;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #b23e35;
+    width: 75px;
+}
+
+    .button-delete:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9e3c0e), color-stop(1, #ed0e3b));
+        background: -moz-linear-gradient(top, #9e3c0e 5%, #ed0e3b 100%);
+        background: -webkit-linear-gradient(top, #9e3c0e 5%, #ed0e3b 100%);
+        background: -o-linear-gradient(top, #9e3c0e 5%, #ed0e3b 100%);
+        background: -ms-linear-gradient(top, #9e3c0e 5%, #ed0e3b 100%);
+        background: linear-gradient(to bottom, #9e3c0e 5%, #ed0e3b 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e3c0e', endColorstr='#ed0e3b',GradientType=0);
+        background-color: #9e3c0e;
+    }
+
+    .button-delete:active {
+        position: relative;
+        top: 1px;
+    }

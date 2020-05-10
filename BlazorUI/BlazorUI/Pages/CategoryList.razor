@@ -1,0 +1,49 @@
+﻿@page "/categorylist"
+@using BlazorUI.Models
+@using BlazorUI.Services
+@inject ICategoryService CategoryService
+@inject NavigationManager NavigationManager
+
+@if (categories == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table table-dark table-striped float-left container text-center">
+        <thead>
+            <tr>
+                <th>Category ID</th>
+                <th>Category Name</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in categories)
+            {
+                <tr>
+                    <td>@category.CategoryId</td>
+                    <td>@category.CategoryName</td>
+                    <th>
+                        <button class="button-update" @onclick="@(() => GoToDetail(category.CategoryId))">Update</button>
+                        <button class="button-delete">Delete</button>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    CategoryListViewModel[] categories;
+
+    protected override async Task OnInitializedAsync()
+    {
+        categories = await CategoryService.GetCategories();
+    }
+
+    private void GoToDetail(int categoryId)
+    {
+        NavigationManager.NavigateTo("/categorydetail/" + categoryId);
+    }
+}
